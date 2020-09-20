@@ -10,6 +10,7 @@ using namespace std;
 
 
 int main() {
+    srand(time(NULL));
     int option;
 
     cout << "Welcome to \"Testing with Algorithms\" program!" << endl;

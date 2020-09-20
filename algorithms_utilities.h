@@ -11,7 +11,10 @@ void fillVector(vector<int> &items);
 bool heapSort(vector<int> &items);
 bool isOrdered(const vector<int> &items);
 void saveToFile(vector<double> &numberOfElements, vector<double> &realTimes);
-void fitNLogNCurve();
+void fitNLogNCurve(const vector<double> &numberOfElements, 
+                   const vector<double> &realTimes, 
+                   vector<double> coefficients
+                   );
 double summation();
 void calculateEstimatedTimes();
 double calculateDeterminationCoefficient();

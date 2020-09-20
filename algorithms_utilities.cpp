@@ -1,14 +1,21 @@
+#include <iostream>
+#include <algorithm>
 #include <vector>
 
 using std::vector;
+using std::cout;
+using std::cin;
 
 
 void askForLimits(int &min, int &max, int &incr);
 void fillVector(vector<int> &items);
 bool heapSort(vector<int> &items);
 bool isOrdered(const vector<int> &items);
-void saveToFile(&realTimes, &numberOfElements);
-void fitNLogNCurve();
+void saveToFile(vector<double> &numberOfElements, vector<double> &realTimes);
+void fitNLogNCurve(const vector<double> &numberOfElements, 
+                   const vector<double> &realTimes, 
+                   vector<double> coefficients
+                   );
 double summation();
 void calculateEstimatedTimes();
 double calculateDeterminationCoefficient();
@@ -18,26 +25,32 @@ void calculateEstimatedTimeNLogN();
 
 
 void askForLimits(int &min, int &max, int &incr) {
-    // TODO
+    cout << "Introduce the initial number of elements: ";
+    cin >> min;
+
+    cout << "Introduce the maximum number of elements: ";
+    cin >> max;
+
+    cout << "Introduce the increment: ";
+    cin >> incr;
 }
 
 
 void fillVector(vector<int> &items) {
-    // TODO
+    for(int i=0; i<items.size(); i++)
+        items.push_back(rand() % 10000000);
 }
 
 
 bool heapSort(vector<int> &items) {
-    // TODO
+    std::sort_heap(items.begin(), items.end());
 
-    return true;
+    return true; //return false?
 }
 
 
 bool isOrdered(const vector<int> &items) {
-    // TODO
-
-    return true;
+    return std::is_sorted(items.begin(), items.end());;
 }
 
 
@@ -46,7 +59,9 @@ void saveToFile(vector<double> &numberOfElements, vector<double> &realTimes) {
 }
 
 
-void fitNLogNCurve() {
+void fitNLogNCurve(const vector<double> &numberOfElements, 
+                   const vector<double> &realTimes, 
+                   vector<double> coefficients) {
     // TODO
 }
 
